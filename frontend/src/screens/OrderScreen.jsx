@@ -12,6 +12,7 @@ import {
   useGetPaypalClientIdQuery,
   usePayOrderMutation,
 } from '../slices/orderApiSlice';
+import { clearCartItems } from '../slices/cartSlice'
 
 const OrderScreen = () => {
     const {id:orderId} = useParams()

@@ -27,7 +27,7 @@ const cartSlice = createSlice({
             return updateCart(state, item)
         },
         removeFromCart: (state,action) => {
-            state.cartItem = state.cartItem.filter((x) => x._id !== action.payload)
+            state.cartItems = state.cartItem.filter((x) => x._id !== action.payload)
             return updateCart(state)
         },
         saveShippingAddress: (state, action) => {
@@ -39,7 +39,7 @@ const cartSlice = createSlice({
             localStorage.setItem('cart',JSON.stringify(state))
         },
         clearCartItems: (state, action) => {
-            state.cartItem = []
+            state.cartItems = []
             localStorage.setItem('cart',JSON.stringify(state))
         },
         resetCart:(state, action) => (state = initialState)
