@@ -9,8 +9,6 @@ const getProducts = asyncHandler(async (req,res) => {
     const pageSize = Number(process.env.PAGINATION_LIMIT) || 8
     const page = Number(req.query.pageNumber) || 1
 
-    console.log(req.query.keyword);
-
     const keyword = req.query.keyword ? 
         {
             name:{
@@ -20,8 +18,7 @@ const getProducts = asyncHandler(async (req,res) => {
         }:{}
     
     const count = await Product.countDocuments({...keyword})
-    console.log(count);
-    const products = await Product.find({...keyword}).limit(pageSize).skip(pageSize * (page - 1))
+    console.log(count);const products = await Product.find({...keyword}).limit(pageSize).skip(pageSize * (page - 1))
 
     res.json({products,page,pages: Math.ceil(count / pageSize)})
 })

@@ -40,8 +40,9 @@ const ProfileScreen = () => {
                     name,
                     email,
                     password
-                }).unwarp()
+                }).unwrap()
                 dispatch(setCredentials({...res}))
+                toast.success('User Information Updated successfully')
             } catch (err) {
                 toast.error(err?.data?.message || err,error)
             }
