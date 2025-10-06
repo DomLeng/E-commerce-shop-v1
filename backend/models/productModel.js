@@ -10,7 +10,7 @@ const reviewSchema = mongoose.Schema(
             type:Number,
             required:true
         },
-        commnet:{
+        comment:{
             type:String,
             required:true
         },
@@ -21,7 +21,7 @@ const reviewSchema = mongoose.Schema(
         }
     },
     {
-        timestamp:true
+        timestamps:true
     }
 )
 
@@ -75,7 +75,7 @@ const productSchema = mongoose.Schema(
         }
     },
     {
-        timestamp:true
+        timestamps:true
     }
 )
 
